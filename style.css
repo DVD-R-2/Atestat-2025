@@ -1,0 +1,483 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+
+html
+{
+  scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+}
+
+body
+{
+  font-family: 'Poppins', sans-serif;
+  /* background-color: #EFE3D2;
+  color: black; */
+
+  &.light-mode {
+    background-color: #EFE3D2; /* Light mode background color */
+  }
+  &.dark-mode {
+    background-color: #121212; /* Dark mode background color */
+  }
+}
+
+#home
+{
+  background-color: #EFE3D2;
+  color: #121212; /* Light mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+#home.dark-mode
+{
+  background-color: #121212; /* Dark mode background color */
+  color: #EFE3D2; /* Dark mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+#inceputurile
+{
+  background-color: #EFDCD2; /* Light mode background color */
+  color: #121212; /* Light mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+#inceputurile.dark-mode
+{
+  background-color: #121212; /* Dark mode background color */
+  color: #EFDCD2; /* Dark mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+#antichitatea
+{
+  background-color: #EFE6D2; /* Light mode background color */
+  color: #121212; /* Light mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+#antichitatea.dark-mode
+{
+  background-color: #121212; /* Dark mode background color */
+  color: #EFE6D2; /* Dark mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+#evul-mediu
+{
+  background-color: #D2E8EF; /* Light mode background color */
+  color: #121212; /* Light mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+#evul-mediu.dark-mode
+{
+  background-color: #121212; /* Dark mode background color */
+  color: #D2E8EF; /* Dark mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+#renasterea
+{
+  background-color: #F0DCC0; /* Light mode background color */
+  color: #121212; /* Light mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+#renasterea.dark-mode
+{
+  background-color: #121212; /* Dark mode background color */
+  color: #F0DCC0; /* Dark mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+#iluminismul
+{
+  background-color: #BBA697; /* Light mode background color */
+  color: #121212; /* Light mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+#iluminismul.dark-mode
+{
+  background-color: #121212; /* Dark mode background color */
+  color: #BBA697; /* Dark mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+#lumea-moderna
+{
+  background-color: #D2EFD7; /* Light mode background color */
+  color: #121212; /* Light mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+#lumea-moderna.dark-mode
+{
+  background-color: #121212; /* Dark mode background color */
+  color: #D2EFD7; /* Dark mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+#prezentul
+{
+  background-color: #C8D6D6; /* Light mode background color */
+  color: #121212; /* Light mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+#prezentul.dark-mode
+{
+  background-color: #121212; /* Dark mode background color */
+  color: #C8D6D6; /* Dark mode text color */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for background and text color */
+}
+
+p
+{
+  font-size: 1.5rem;
+  line-height: 1.5;
+}
+
+.hidden {
+  opacity : 0; /* Hide the navbar links by default */
+  filter: blur(5px); /* Blur effect when hidden */
+  transform: translateX(-100%); /* Slide out effect when hidden */
+  transition: all 1s; /* Transition effect when showing the navbar links */
+}
+
+.show {
+  opacity : 1; /* Show the navbar links when the hamburger menu is clicked */
+  filter: blur(0); /* Remove blur effect when showing the navbar links */
+  transform: translateX(0); /* Slide in effect when showing the navbar links */
+}
+
+.hidden-nav {
+  filter: blur(5px); /* Blur effect when hidden */
+  transform: scale(0.8); /* Scale down effect when hidden */
+  transition: all 2s; /* Transition effect when showing the navbar links */
+}
+
+.show-nav {
+  filter: blur(0); /* Remove blur effect when showing the navbar links */
+  transform: scale(1); /* Scale up effect when showing the navbar links */
+  transform: translateX(0); /* Slide in effect when showing the navbar links */
+}
+
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  z-index: 10;
+  display: flex;
+  justify-content: center; /* Space between hamburger menu and links */
+  gap: 2rem;
+  align-items: center; /* Center items vertically */
+  color: white; /* Text color */
+  background-color: hsla(219, 59%, 13%, 0.75); /* Background color */
+  transition: top 0.3s; /* Transition effect when sliding down (and up) */
+}
+
+.nav-links {
+  display: flex; /* Hide the navbar links by default */
+  flex-direction: row;
+  gap: 2.2rem;
+  padding: 1.5rem;
+}
+
+.navbar .nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1.3rem;
+  transition: color 0.3s, transform 0.2s;
+
+  &:hover {
+    color: #ff9800; /* Hover effect */
+    transform: scale(1.05); /* Slightly enlarge the icon on hover */
+  }
+
+  &:active {
+    color: hsl(28, 90%, 46%); /* Active effect */
+    transform: scale(0.95); /* Slightly shrink the icon on click */
+  }
+
+  &.active-page {
+    color: #ff9800; /* Active page color */
+    font-weight: bold; /* Bold text for active page */
+  }
+  /* The pseudo element has the same content and hover style, so it pre-sets the width of the element and visibility: hidden hides the pseudo element from actual view. */
+  &::before 
+  {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+}
+
+.hamburger {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  cursor: pointer;
+
+  & span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 3px;
+    transition: all 0.3s;
+  }
+}
+
+.theme-toggle {
+  background-color: hsl(36, 100%, 50%);
+  color: white;
+  border: none;
+  padding: 0.25rem .5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1.7rem; /* Increase the font size */
+  transition: background-color 0.3s, color 0.3s, transform 0.2s;
+
+  &:hover {
+    background-color: hsl(28, 80%, 52%);
+    transform: scale(1.05); /* Slightly enlarge the icon on hover */
+  }
+
+  &:active {
+    background-color: hsl(28, 90%, 46%);
+    transform: scale(0.95); /* Slightly shrink the icon on click */
+  }
+}
+
+.hero-section
+{
+  position: relative; /* Ensure the section is positioned for layering */
+  width: 100vw;
+  height: 100vh;
+}
+
+.hero-image
+{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  filter: brightness(.6);
+  z-index: -1; /* Place the image behind other elements */
+}
+
+.hero-text
+{
+  position: absolute;
+  bottom: 5rem; /* Position it 1rem from the bottom */
+  left: 5rem; /* Position it 1rem from the left */
+  text-align: left;
+  color: white;
+  z-index: 1; /* Ensure the text is above the image */
+
+  & h1
+  {
+    font-size: 7rem;
+    text-align: left;
+  }
+
+  & p
+  {
+    font-size: 3rem;
+    text-align: left
+  }
+}
+
+.scroll-down {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  transition: color 0.3s;
+}
+
+.scroll-down:hover {
+  color: #ff9800;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(-50%, 0);
+  }
+  50% {
+    transform: translate(-50%, 10px);
+  }
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 3rem 12rem 6rem 12rem;
+  position: relative; /* Allows positioning of the author */
+}
+
+.quote-text {
+  font-size: 2.5rem; /* Make the quote text bigger */
+  margin-bottom: 2rem; /* Add spacing between text and author */
+  width: 40ch; /* Limit the width of the quote text */
+}
+
+.quote-author {
+  position: relative;
+  font-size: 2.2rem;
+  font-style: italic  ;
+}
+
+.timeline-section {
+  padding: 0 0 5rem 0;
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  gap: 2rem; /* Space between text and image */
+  text-align: center;
+  margin-bottom: 2.5rem ;
+
+  & h2
+  {
+    font-size: 2.5rem;
+    margin-bottom: 0rem;
+  } 
+}
+
+.content-section {
+  padding: 0 5rem 5rem 5rem;
+  display: flex;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+  gap: 2rem; /* Space between text and image */
+  text-align: center;
+  margin-bottom: 2.5rem ;
+
+  & h2
+  {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  & p
+  {
+    width: 70ch;
+    margin-bottom: .5rem;
+    flex: 2;
+  }
+
+  & figure
+  {
+    flex: 1; /* Prevent the image from shrinking */
+  }
+
+  & img
+  {
+    max-height: 100%; /* Scale the image to match the height of the paragraph */
+    max-width: 100%; /* Prevent the image from overflowing */
+    object-fit: contain; /* Ensure the image scales proportionally */
+    width: 100%; /* Ensure the image fits within its container */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 400px;
+  }
+}
+
+.footer {
+  position: relative; /* Ensure the pseudo-element is positioned relative to the footer */
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 2rem;
+  margin-top: 2.5rem;
+  /* color: white; */
+  overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover; /* Cover the entire footer area */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Prevent repeating the image */
+  filter: brightness(0.3) blur(7px); /* Apply a 5px blur */
+  z-index: 0; /* Place the pseudo-element behind the content */
+}
+
+.index::before{
+  background-image: url('assets/index.jpg'); /* Background image for the index page */
+}
+.inceputurile::before{
+  background-image: url('assets/Inceputurile.jpg'); /* Background image for the inceputurile page */
+}
+.antichitatea::before{
+  background-image: url('assets/Antichitatea.jpg'); /* Background image for the inceputurile page */
+}
+.evul-mediu::before{
+  background-image: url('assets/Evul-Mediu.jpg'); /* Background image for the inceputurile page */
+}
+.renasterea::before{
+  background-image: url('assets/Renasterea.png'); /* Background image for the inceputurile page */
+}
+.iluminismul::before{
+  background-image: url('assets/Iluminismul.jpg'); /* Background image for the inceputurile page */
+}
+.lumea-moderna::before{
+  background-image: url('assets/Lumea-Moderna.jpg'); /* Background image for the inceputurile page */
+}
+.prezentul::before{
+  background-image: url('assets/Prezentul.jpg'); /* Background image for the inceputurile page */
+}
+
+.footer-links,
+.footer-references {
+  position: relative; /* Ensure the content is above the pseudo-element */
+  z-index: 1; /* Place the content above the dark filter */
+  flex: 1;
+  display: flex;
+  flex-direction: column; /* Arrange items in a column */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  text-align: center; /* Center text */
+
+  & h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: white;
+  }
+
+  & ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  & li {
+    margin-bottom: 0.5rem;
+  }
+
+  & a {
+    text-decoration: none;
+    color: #ff9800;
+    transition: color 0.3s;
+
+    &:hover {
+      color: white; /* Change color on hover */
+    }
+  }
+}
